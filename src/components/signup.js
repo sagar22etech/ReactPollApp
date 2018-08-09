@@ -10,18 +10,28 @@ export default class Signup extends Component {
       password: "",
       confirmPassword: "",
       role: "user",
-      fieldsValue: false
+      fieldsValue: false,
+      msg:""
     };
   }
 
-  onSubmit = (e) => {
-      e.preventDefault();
-    console.log("its clicked");
+  onSubmit = e => {
+    e.preventDefault();
+    if(this.state.password===this.state.confirmPassword){
+      this.setState({msg:""})
+      this.props.requestSignUp({
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password,
+        role: this.state.role
+      });
+    }else{
+      this.setState({msg:"Password Donot Match"})
+    }
   };
 
   onChange = e => {
-    this.setState({ [e.target.name]: e.target.value }, () => {
-    });
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   render() {
@@ -31,10 +41,12 @@ export default class Signup extends Component {
           <div className="col-md-6 mx-auto">
             <div className="card card-body">
               <h3 className="text-center mb-4">Sign-up</h3>
-              {this.state.password === this.state.confirmPassword ? null : (
-                <span>Password Donot Match</span>
-              )}
-              <form onSubmit={(e)=>{this.onSubmit(e)}}>
+              <span>{this.state.msg}</span>
+              <form
+                onSubmit={e => {
+                  this.onSubmit(e);
+                }}
+              >
                 <fieldset>
                   <div className="form-group has-error">
                     <input

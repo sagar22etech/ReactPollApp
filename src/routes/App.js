@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Login from '../components/login';
-import Signup from '../components/signup';
+import Signup from '../containers/signupcontainer';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {

@@ -1,0 +1,6 @@
+const constants = {
+    SIGNUP_REQUEST: 'SIGNUP_REQUEST',
+    SIGNUP_REQUEST_SUCCESS: 'SIGNUP_REQUEST_SUCCESS',
+    SIGNUP_REQUEST_ERROR: 'SIGNUP_REQUEST_ERROR',
+}
+export default constants;
