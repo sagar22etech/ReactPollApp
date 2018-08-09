@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import '../styles/App.css';
+import Login from '../components/login'
 
 class App extends Component {
   render() {
-    return <h1>Poll App</h1>
+    return <Login />
   }
 }
 
