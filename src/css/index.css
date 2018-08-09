@@ -15,7 +15,9 @@ body {
   max-width: 330px;
   padding: 15px;
   margin: auto;
-  margin-top: 15%; }
+  margin-top: 15%;
+  text-align: center;
+  border: 1px solid #aeb6bf; }
   .form-signin .form-control {
     position: relative;
     box-sizing: border-box;
