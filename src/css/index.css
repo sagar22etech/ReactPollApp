@@ -34,3 +34,6 @@ body {
     border-top-right-radius: 0; }
   .form-signin .form-control:focus {
     z-index: 2; }
+
+fieldset {
+  text-align: center; }

@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 import Login from '../components/login';
 import Signup from '../components/signup';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
   render() {
-    return <Signup />
+    return(
+      <Router>
+      <div>
+      <Route exact path="/" component={Login} />
+      <Route exact path="/signup" component={Signup} />
+      </div>
+      </Router>  
+    )
   }
 }
 
