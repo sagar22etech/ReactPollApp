@@ -2,10 +2,20 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 export default class Login extends Component {
+  onChange = e => {
+    this.props.loginFormData({ name: e.target.type, value: e.target.value });
+  };
+  onSubmit = e => {
+    e.preventDefault();
+    this.props.requestLogin({
+      email: this.props.formData.email,
+      password: this.props.formData.password
+    });
+  };
   render() {
     return (
       <div className="container">
-        <form className="form-signin">
+        <form className="form-signin" onSubmit={this.onSubmit}>
           <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
           <label htmlFor="inputEmail" className="sr-only">
             Email address
@@ -17,6 +27,7 @@ export default class Login extends Component {
             placeholder="Email address"
             required
             autoFocus
+            onChange={this.onChange}
           />
           <label htmlFor="inputPassword" className="sr-only">
             Password
@@ -27,6 +38,7 @@ export default class Login extends Component {
             className="form-control"
             placeholder="Password"
             required
+            onChange={this.onChange}
           />
           <button className="btn btn-lg btn-primary btn-block" type="submit">
             Sign In
