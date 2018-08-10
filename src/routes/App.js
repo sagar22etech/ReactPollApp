@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Login from '../components/login';
+import Login from '../containers/logincontainer';
 import Signup from '../containers/signupcontainer';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
