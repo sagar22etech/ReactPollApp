@@ -3,7 +3,6 @@ body {
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  padding-top: 40px;
   padding-bottom: 40px;
   background-color: #f5f5f5; }
 
@@ -37,3 +36,11 @@ body {
 
 fieldset {
   text-align: center; }
+
+.form-inline {
+  display: block; }
+
+@media (min-width: 768px) {
+  .navbar-expand-md {
+    -ms-flex-pack: start;
+    justify-content: safe !important; } }
