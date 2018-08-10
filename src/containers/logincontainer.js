@@ -3,7 +3,8 @@ import { requestLogin, loginFormData } from "../redux/actions";
 import Login from "../components/login";
 
 const mapStateToProps = state => ({
-    formData: state.login.formData
+    formData: state.login.formData,
+    isLoginSuccess: state.isLoginSuccess
 });
 
 const mapDispatchToProps = dispatch => ({

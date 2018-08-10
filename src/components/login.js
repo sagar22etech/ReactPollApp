@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import storageHelper from "../services/storagehelper";
 
 export default class Login extends Component {
   onChange = e => {
@@ -13,6 +14,9 @@ export default class Login extends Component {
     });
   };
   render() {
+    if (storageHelper() && this.props.isLoginSuccess) {
+      return <Redirect to="/userlist" />;
+    }
     return (
       <div className="container">
         <form className="form-signin" onSubmit={this.onSubmit}>
