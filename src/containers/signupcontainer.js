@@ -1,11 +1,16 @@
 import { connect } from "react-redux";
-import { requestSignUp } from "../redux/actions";
+import { requestSignUp, signupFormData } from "../redux/actions";
 import Signup from "../components/signup";
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => {
+  return {
+    data: state.signup
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
-  requestSignUp: payload => dispatch(requestSignUp(payload))
+  requestSignUp: payload => dispatch(requestSignUp(payload)),
+  signupFormData: payload => dispatch(signupFormData(payload))
 });
 
 export default connect(

@@ -4,6 +4,14 @@ import constants from "../constants";
 
 const initialState = {
   data: {},
+  formData: {
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    role: "user",
+    msg: ""
+  },
   isLoading: false,
   isSuccess: false,
   isError: false,
@@ -38,11 +46,18 @@ const handleSignupError = (state, action) => {
   });
 };
 
+const handleSignupFormData = (state, action) => {
+  return update(state,{formData: {
+    [action.payload.name]:{$set: action.payload.value}
+  }});
+};
+
 export default handleActions(
   {
     [constants.SIGNUP_REQUEST]: handleSignupRequest,
     [constants.SIGNUP_REQUEST_SUCCESS]: handleSignupSuccess,
-    [constants.SIGNUP_REQUEST_ERROR]: handleSignupError
+    [constants.SIGNUP_REQUEST_ERROR]: handleSignupError,
+    [constants.SIGNUP_FORM_DATA] : handleSignupFormData
   },
   initialState
 );

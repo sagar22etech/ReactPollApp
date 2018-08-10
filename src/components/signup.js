@@ -4,34 +4,28 @@ import { Link } from "react-router-dom";
 export default class Signup extends Component {
   constructor() {
     super();
-    this.state = {
-      name: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-      role: "user",
-      fieldsValue: false,
-      msg:""
-    };
   }
 
   onSubmit = e => {
     e.preventDefault();
-    if(this.state.password===this.state.confirmPassword){
-      this.setState({msg:""})
+    if (
+      this.props.data.formData.password ===
+      this.props.data.formData.confirmPassword
+    ) {
+      this.props.signupFormData({ name: "msg", value: "" });
       this.props.requestSignUp({
-        name: this.state.name,
-        email: this.state.email,
-        password: this.state.password,
-        role: this.state.role
+        name: this.props.data.formData.name,
+        email: this.props.data.formData.email,
+        password: this.props.data.formData.password,
+        role: this.props.data.formData.role
       });
-    }else{
-      this.setState({msg:"Password Donot Match"})
+    } else {
+      this.props.signupFormData({ name: "msg", value: "Password Donot Match" });
     }
   };
 
   onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.props.signupFormData({ name: e.target.name, value: e.target.value });
   };
 
   render() {
@@ -41,7 +35,7 @@ export default class Signup extends Component {
           <div className="col-md-6 mx-auto">
             <div className="card card-body">
               <h3 className="text-center mb-4">Sign-up</h3>
-              <span>{this.state.msg}</span>
+              <span>{this.props.data.formData.msg}</span>
               <form
                 onSubmit={e => {
                   this.onSubmit(e);
@@ -100,7 +94,7 @@ export default class Signup extends Component {
                     <select
                       className="form-control input-lg"
                       name="role"
-                      value={this.state.role}
+                      value={this.props.data.formData.role}
                       onChange={e => {
                         this.onChange(e);
                       }}
