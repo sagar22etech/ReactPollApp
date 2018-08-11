@@ -5,24 +5,26 @@ import constants from "../constants";
 const initialState = {
   formData: {
     title: "",
-    addOptions: [1],
-    options: []
+    options: [{ option: "", vote: 0 }]
   }
 };
 
 const handleAddOption = (state, action) =>
   update(state, {
     formData: {
-      addOptions: { $push: [action.payload.value] }
+      options: {
+        $push: [{ option: action.payload.value, vote: action.payload.vote }]
+      }
     }
   });
 
-const handleDeleteOption = (state, action) =>
-  update(state, {
+const handleDeleteOption = (state, action) => {
+  return update(state, {
     formData: {
-      addOptions: { $splice: [[1, 1]] }
+      options: { $splice: [[parseInt(action.payload), 1]] }
     }
   });
+};
 
 export default handleActions(
   {

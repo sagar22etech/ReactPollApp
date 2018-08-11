@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   addOptions: payload => dispatch(addOptions(payload)),
-  deleteOptions: () => dispatch(deleteOptions())
+  deleteOptions: payload => dispatch(deleteOptions(payload))
 });
 
 export default connect(

@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import Header from "../genric/header";
 
 export default class AddPoll extends Component {
-  onAdd = () => {
-    this.props.addOptions(1);
+  onAdd = (e) => {
+    this.props.addOptions({value:e.target.value,vote:0});
   };
-  onDelete = () => {
-    this.props.deleteOptions();
+  onDelete = (e) => {
+    this.props.deleteOptions(e.target.id);
   };
 
   render() {
@@ -24,7 +24,7 @@ export default class AddPoll extends Component {
                   placeholder="Enter Poll Title"
                 />
               </div>
-              {this.props.formData.addOptions.map((data, i) => (
+              {this.props.formData.options.map((data, i) => (
                 <div className="form-group form-inline" key={i}>
                   <label htmlFor="options">Option</label>
                   <input
@@ -35,7 +35,8 @@ export default class AddPoll extends Component {
                   <button
                     type="button"
                     className="btn btn-danger"
-                    onClick={this.onDelete}
+                    id={i}
+                    onClick={e=>this.onDelete(e)}
                   >
                     Delete
                   </button>
@@ -45,7 +46,7 @@ export default class AddPoll extends Component {
                 <button
                   type="button"
                   className="btn btn-success"
-                  onClick={this.onAdd}
+                  onClick={e=>this.onAdd(e)}
                 >
                   Add
                 </button>

@@ -5,6 +5,10 @@ fieldset{
 .form-inline{
     display: block;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 
 @media (min-width: 768px){
     .navbar-expand-md {
