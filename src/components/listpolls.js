@@ -11,14 +11,17 @@ class Listpolls extends React.Component {
     });
   };
   render() {
-    console.log(this.props.data);
     const data = this.props.data;
     let pollsList;
     if (Object.keys(data).length == 0) {
       return <p>Loading...</p>;
     } else {
       pollsList = data.map((pollitem, index) => (
-        <div key={index} className="card text-secondary" style={{width:"100%"}}>
+        <div
+          key={index}
+          className="card text-secondary"
+          style={{ width: "100%" }}
+        >
           <div className="card-body bg-info">
             <h4 className="card-title text-center bg-dark text-white">
               {pollitem.title}
@@ -47,7 +50,7 @@ class Listpolls extends React.Component {
     return (
       <div className="container">
         <label>Poll List</label>
-        <div /* className="card-group" */>{pollsList}</div>
+        <div>{pollsList}</div>
       </div>
     );
   }
