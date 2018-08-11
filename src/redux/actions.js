@@ -22,3 +22,10 @@ export const requestPollsError = createAction(constants.LIST_POLLS_REQUEST_ERROR
 export const deleteOption = createAction(constants.DELETE_OPTION_REQUEST);
 export const deleteOptionSuccess = createAction(constants.DELETE_OPTION_REQUEST_SUCCESS);
 export const deleteOptionError = createAction(constants.DELETE_OPTION_REQUEST_ERROR);
+
+export const addOptions = createAction(constants.ADD_OPTIONS);
+export const deleteOptions = createAction(constants.DELETE_OPTIONS);
+export const pollFormData = createAction(constants.POLL_FORM_DATA);
+export const pollFormRequest= createAction(constants.POLL_FORM_REQUEST);
+export const pollFormRequestSuccess= createAction(constants.POLL_FORM_REQUEST);
+export const pollFormRequestError= createAction(constants.POLL_FORM_REQUEST);
