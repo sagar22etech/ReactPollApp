@@ -1,5 +1,10 @@
 import { connect } from "react-redux";
-import { addOptions, deleteOptions } from "../redux/actions";
+import {
+  addOptions,
+  deleteOptions,
+  pollFormData,
+  pollFormRequest
+} from "../redux/actions";
 import AddPoll from "../components/addpoll";
 
 const mapStateToProps = state => ({
@@ -8,7 +13,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   addOptions: payload => dispatch(addOptions(payload)),
-  deleteOptions: payload => dispatch(deleteOptions(payload))
+  deleteOptions: payload => dispatch(deleteOptions(payload)),
+  pollFormData: payload => dispatch(pollFormData(payload)),
+  pollFormRequest: payload => dispatch(pollFormRequest(payload))
 });
 
 export default connect(

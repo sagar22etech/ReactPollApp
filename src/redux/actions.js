@@ -13,3 +13,7 @@ export const loginFormData = createAction(constants.LOGIN_FORM_DATA);
 
 export const addOptions = createAction(constants.ADD_OPTIONS);
 export const deleteOptions = createAction(constants.DELETE_OPTIONS);
+export const pollFormData = createAction(constants.POLL_FORM_DATA);
+export const pollFormRequest= createAction(constants.POLL_FORM_REQUEST);
+export const pollFormRequestSuccess= createAction(constants.POLL_FORM_REQUEST);
+export const pollFormRequestError= createAction(constants.POLL_FORM_REQUEST);

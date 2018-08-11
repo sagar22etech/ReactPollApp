@@ -1,18 +1,18 @@
-@import './login.scss';
-fieldset{
-    text-align: center;
+@import "./login.scss";
+fieldset {
+  text-align: center;
 }
-.form-inline{
-    display: block;
+.form-inline {
+  display: block;
 }
-a{
-    text-decoration: none;
-    color: black;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-@media (min-width: 768px){
-    .navbar-expand-md {
-        -ms-flex-pack: start;
-        justify-content: safe !important;
-    }
+@media (min-width: 768px) {
+  .navbar-expand-md {
+    -ms-flex-pack: start;
+    justify-content: safe !important;
+  }
 }
