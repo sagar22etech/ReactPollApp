@@ -6,16 +6,22 @@ class Listuser extends React.Component {
     this.props.requestUsers();
   }
   render() {
-    const usersList = _.map(this.props.data, (listitem, index) => (
-      <tbody key={index}>
-        <tr>
-          <td>{listitem.id}</td>
-          <td>{listitem.name}</td>
-          <td>{listitem.email}</td>
-          <td>{listitem.role}</td>
-        </tr>
-      </tbody>
-    ));
+    const data = this.props.data;
+    let usersList;
+    if (Object.keys(data).length == 0) {
+      return <p>Loading...</p>;
+    } else {
+      usersList = data.map((listitem, index) => (
+        <tbody key={index}>
+          <tr>
+            <td>{listitem.id}</td>
+            <td>{listitem.name}</td>
+            <td>{listitem.email}</td>
+            <td>{listitem.role}</td>
+          </tr>
+        </tbody>
+      ));
+    }
     return (
       <div className="container">
         <label>Users List</label>
