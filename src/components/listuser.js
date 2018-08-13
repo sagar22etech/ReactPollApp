@@ -1,4 +1,6 @@
 import React from "react";
+import Header from '../genric/header';
+import LoadingScreen from '../genric/loadingScreen';
 
 class Listuser extends React.Component {
   componentWillMount() {
@@ -8,7 +10,10 @@ class Listuser extends React.Component {
     const data = this.props.data;
     let usersList;
     if (Object.keys(data).length == 0) {
-      return <p>Loading...</p>;
+      return (<div className="container">
+        <Header/>
+        <LoadingScreen/>
+      </div>);
     } else {
       usersList = data.map((listitem, index) => (
         <tbody key={index}>
@@ -23,7 +28,7 @@ class Listuser extends React.Component {
     }
     return (
       <div className="container">
-        <label>Users List</label>
+        <Header/>
         <table className="table table-striped">
           <thead>
             <tr>

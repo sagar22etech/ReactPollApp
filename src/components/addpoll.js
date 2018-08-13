@@ -28,7 +28,7 @@ export default class AddPoll extends Component {
     // console.log(this.props);
 
     return (
-      <div>
+      <div className="container">
         <Header />
         <div className="container text-center">
           <div id="container">

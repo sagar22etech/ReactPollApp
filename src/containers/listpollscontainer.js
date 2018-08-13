@@ -1,8 +1,9 @@
 import { connect } from "react-redux";
 import Listpolls from "../components/listpolls";
-import { requestPolls,deleteOption } from "../redux/actions";
+import { requestPolls, deleteOption } from "../redux/actions";
 const mapStateToProps = state => ({
-  data: state.listpolls.data
+  data: state.listpolls.data,
+  conditions: state.listpolls
 });
 const mapDispatchToProps = dispatch => ({
   requestPolls: () => dispatch(requestPolls()),
