@@ -7,7 +7,7 @@ const initialState = {
   isLoading: false,
   isSuccess: false,
   isError: false,
-  isDeleteOptionLoading: true,
+  isDeleteOptionLoading: false,
   isDeleteOptionSuccess: false,
   isDeleteOptionError: false,
   msg: ""
